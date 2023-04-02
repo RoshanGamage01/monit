@@ -2,14 +2,14 @@
     <section class="bg-[#1b2133d7] shadow-lg w-full h-full flex flex-col items-center p-5">
         <div class="font-bold text-lg">MONIT<i class="text-sky-500">.</i></div>
 
-        <div class="w-full mt-5">
+        <div class="w-full mt-7">
             <div class="mb-3 ml-5">MENUE</div>
             <div class="grid gap-3">
-                <dbButtons :is-active="true">
+                <dbButtons to="/">
                     <font-awesome-icon :icon="['fas', 'house']"/>
                     Dashboard
                 </dbButtons>
-                <dbButtons>
+                <dbButtons to="/message">
                     <font-awesome-icon :icon="['fas', 'message']" />
                     Message
                 </dbButtons>
@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <div class="w-full mt-5">
+        <div class="w-full mt-7">
             <div class="mb-3 ml-4">RECRUITMENT</div>
             <div class="grid gap-3">
                 <dbButtons>
@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <div class="w-full mt-5">
+        <div class="w-full mt-7">
             <div class="mb-3 ml-4">ORGANIZATION</div>
             <div class="grid gap-3">
                 <dbButtons>

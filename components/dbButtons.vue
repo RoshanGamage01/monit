@@ -1,14 +1,11 @@
 <template>
-    <div class="w-full flex items-center gap-5 py-2 px-4 rounded-lg" :class="props.isActive ? 'bg-sky-700 text-white' : 'text-[#82899c]'">
+    <NuxtLink :to="props.to" class="w-full flex items-center gap-5 py-2 px-4 rounded-lg text-[#82899c]" :active-class="'bg-sky-700 text-white'">
         <slot/>
-    </div>
+    </NuxtLink>
 </template>
 
 <script setup>
     const props = defineProps({
-        isActive: {
-            typeof: Boolean,
-            default: false
-        }
+        to: String
     })
 </script>
