@@ -46,7 +46,7 @@ const props = defineProps({
 .main{
     position: relative;
     z-index: 3;
-    background: rgba(16, 2, 60, 0.684);
+    background: rgba(16, 3, 67, 0.684);
     inset: 2px;
 }
 </style>
