@@ -25,9 +25,8 @@ const props = defineProps({
     z-index: 1;
     opacity: 0.6;
 }
-
-.wrapper:hover::before {
-  content: "";
+.wrapper::before{
+    content: "";
   display: block;
   background: white;
   background: radial-gradient(
@@ -41,9 +40,15 @@ const props = defineProps({
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.8;
+  opacity: 0;
   z-index: 2;
   pointer-events: none;
+  transition: opacity .5s;
+}
+
+.wrapper:hover::before {
+  opacity: 0.8;
+  transition: opacity .5s;
 }
 
 .main{
