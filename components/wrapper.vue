@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper w-fit h-fit relative rounded-lg" :class="props.rounded">
+    <div class="wrapper w-fit h-fit relative" :class="props.rounded">
         <div class="m-border rounded-[inherit]"></div>
         <div class="main rounded-[inherit]">
             <slot/>
@@ -9,14 +9,17 @@
 
 <script setup>
 const props = defineProps({
-    rounded: String
+    rounded: {
+        typeof: String,
+        default: "rounded-lg"
+    }
 })
 </script>
 
 <style>
 .m-border{
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
     background: rgba(128, 128, 128, 0.475);
     position: absolute;
     z-index: 1;
@@ -33,8 +36,8 @@ const props = defineProps({
     transparent 40%
   );
   border-radius: inherit;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
   position: absolute;
   top: 0;
   left: 0;
@@ -46,7 +49,7 @@ const props = defineProps({
 .main{
     position: relative;
     z-index: 3;
-    background: rgba(16, 3, 67, 0.684);
-    inset: 2px;
+    background: rgba(14, 1, 72, 0.684);
+    inset: 1px;
 }
 </style>
