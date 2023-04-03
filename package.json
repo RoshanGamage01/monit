@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
-    "@fortawesome/vue-fontawesome": "^3.0.3"
+    "@fortawesome/vue-fontawesome": "^3.0.3",
+    "apexcharts": "^3.37.2",
+    "vue3-apexcharts": "^1.4.1"
   }
 }

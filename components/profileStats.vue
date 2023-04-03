@@ -18,6 +18,10 @@
             <div class="text-2xl font-bold mt-6">Roshan Gamage</div>
             <div class="text-[#82899c]">Full-stack Developer</div>
         </div>
+
+        <div class="w-full mt-10">
+            <div class="pl-4 font-bold">Messages</div>
+        </div>
     </section>
 </template>
 
