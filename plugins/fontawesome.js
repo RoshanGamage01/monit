@@ -10,7 +10,8 @@ import {
   faDesktop,
   faMagnifyingGlass,
   faCircleQuestion,
-  faBell
+  faBell,
+  faArrowTrendUp
 } from "@fortawesome/free-solid-svg-icons";
 
 // This is important, we are going to let Nuxt worry about the CSS
@@ -28,7 +29,8 @@ library.add([
   faDesktop,
   faMagnifyingGlass,
   faCircleQuestion,
-  faBell
+  faBell,
+  faArrowTrendUp
 ]);
 
 export default defineNuxtPlugin((nuxtApp) => {

@@ -1,36 +1,26 @@
 <template>
-  <ClientOnly>
-    <VueApexCharts
-      width="500"
-      type="bar"
-      :options="options"
-      :series="series"
-    ></VueApexCharts>
-  </ClientOnly>
+  <div class="w-full h-full px-10 grid gap-10">
+    <div class="w-full h-fit grid grid-cols-3 gap-7">
+      <staticsCard :value="74" title="Total Applications" numbers="5672" color="#38CB89" />
+      <staticsCard :value="69" title="Shotlisted Candidates" numbers="3045" color="#FFA600" />
+      <staticsCard :value="50" title="Rejected Candidates" numbers="1055" color="#FF5630" />
+    </div>
+    <div>
+      
+    </div>
+  </div>
 </template>
 
 <script setup>
-import VueApexCharts from 'vue3-apexcharts'
+
 
 useHead({
-  title: "Monit Home"
+  title: "Monit Home",
 });
 
 definePageMeta({
-  layout: "dashbord"
-})
+  layout: "dashbord",
+});
 
-  let options = {
-      chart: {
-        id: 'vuechart-example'
-      },
-      xaxis: {
-        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
-      }
-    }
-  
-  let series = [{
-      name: 'series-1',
-      data: [30, 40, 45, 50, 49, 60, 70, 91]
-    }]
+
 </script>

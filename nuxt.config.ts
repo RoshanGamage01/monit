@@ -18,6 +18,7 @@ export default defineNuxtConfig({
 
           window.onload = function(){
             wrappers = document.querySelectorAll('.wrapper');
+            console.log(wrappers)
           }
 
           window.addEventListener("mousemove", e => {
