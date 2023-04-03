@@ -4,19 +4,19 @@
       <staticsCard
         :value="74"
         title="Total Applications"
-        numbers="5672"
+        :numbers="5672"
         color="#38CB89"
       />
       <staticsCard
         :value="69"
         title="Shotlisted Candidates"
-        numbers="3045"
+        :numbers="3045"
         color="#FFA600"
       />
       <staticsCard
         :value="50"
         title="Rejected Candidates"
-        numbers="1055"
+        :numbers="1055"
         color="#FF5630"
       />
     </div>
@@ -24,7 +24,8 @@
       <ClientOnly>
         <VueApexCharts
           type="bar"
-          height="350"
+          height="100%"
+          width="100%"
           :options="options"
           :series="series"
         />
@@ -44,32 +45,39 @@ definePageMeta({
   layout: "dashbord",
 });
 
-let series = [{
-            name: 'PRODUCT A',
-            data: [44, 55, 41, 67, 22, 43]
-          }, {
-            name: 'PRODUCT B',
-            data: [13, 23, 20, 8, 13, 27]
-          }, {
-            name: 'PRODUCT C',
-            data: [11, 17, 15, 15, 21, 14]
-          }, {
-            name: 'PRODUCT D',
-            data: [21, 7, 25, 13, 22, 8]
-          }];
+let series = [
+  {
+    name: "PRODUCT A",
+    data: [40, 10, 30, 30, 50, 30, 20, 10, 55, 39, 24, 17],
+  },
+  {
+    name: "PRODUCT B",
+    data: [10, 25, 36, 28, 24, 20, 24, 20, 39, 5, 20, 32],
+  },
+  {
+    name: "PRODUCT C",
+    data: [20, 35, 30, 36, 25, 20, 24, 10, 19, 5, 10, 22],
+  },
+];
 
 let options = {
   chart: {
     type: "bar",
-    height: 350,
+    height: "100%",
     stacked: true,
+    stackType: "100%",
     toolbar: {
-      show: true,
+      show: false,
     },
     zoom: {
       enabled: true,
     },
+    dataLabels: {
+      enabled: false,
+    },
   },
+  
+  
   responsive: [
     {
       breakpoint: 480,
@@ -81,39 +89,88 @@ let options = {
         },
       },
     },
-  ],
-  plotOptions: {
-    bar: {
-      horizontal: false,
-      borderRadius: 10,
-      dataLabels: {
-        total: {
-          enabled: true,
-          style: {
-            fontSize: "13px",
-            fontWeight: 900,
+    {
+      breakpoint: 5000,
+      options: {
+        // colors: ["Red, Green", "Blue"],
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          labels: {
+            // colors: "#FFFFFF",
+            // useSeriesColors: false,
           },
         },
       },
     },
+  ],
+  plotOptions: {
+    bar: {
+      horizontal: false,
+      borderRadius: "5",
+      columnWidth: "10%",
+      rangeBarOverlap: true,
+      distributed: false,
+      rangeBarGroupRows: true,
+      dataLabels: {
+        position: "center",
+        maxItems: 0,
+        hideOverflowingLabels: false,
+        orientation: "horizontal",
+      },
+    },
+  },
+  tooltip: {
+    fillSeriesColor: false,
+    theme: "dark",
+  },
+  subtitle: {
+    text: "Statistics of active Aplications",
+    align: "left",
+    margin: 0,
+    offsetX: 0,
+    offsetY: 0,
+    floating: false,
+    style: {
+      fontSize: "20px",
+      fontWeight: "bold",
+      fontFamily: undefined,
+      color: "#ffffff",
+    },
   },
   xaxis: {
-    type: "datetime",
+    type: "category",
     categories: [
-      "01/01/2011 GMT",
-      "01/02/2011 GMT",
-      "01/03/2011 GMT",
-      "01/04/2011 GMT",
-      "01/05/2011 GMT",
-      "01/06/2011 GMT",
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "July",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
     ],
   },
+  yaxis: {
+    labels: {
+      minWidth: 0,
+      maxWidth: 100,
+    },
+  },
   legend: {
-    position: "right",
-    offsetY: 40,
+    position: "top",
+    // offsetY: 10,
   },
   fill: {
+    colors: ["#38CB89", "#FFA600", "#FF5630"],
+    type: "solid",
     opacity: 1,
+    strokeWidth: 7,
   },
 };
 </script>
