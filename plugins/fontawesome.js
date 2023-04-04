@@ -11,7 +11,9 @@ import {
   faMagnifyingGlass,
   faCircleQuestion,
   faBell,
-  faArrowTrendUp
+  faArrowTrendUp,
+  faChevronDown,
+  faEllipsisVertical
 } from "@fortawesome/free-solid-svg-icons";
 
 // This is important, we are going to let Nuxt worry about the CSS
@@ -30,7 +32,9 @@ library.add([
   faMagnifyingGlass,
   faCircleQuestion,
   faBell,
-  faArrowTrendUp
+  faArrowTrendUp,
+  faChevronDown,
+  faEllipsisVertical
 ]);
 
 export default defineNuxtPlugin((nuxtApp) => {
